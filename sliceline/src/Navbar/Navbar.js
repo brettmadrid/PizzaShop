@@ -22,7 +22,7 @@ export function Navbar() {
     <NavbarStyled>
       <Logo>
         Sliceline{' '}
-        <span role='img' alt='pizza emoji'>
+        <span role='img' aria-label='pizza slice'>
           🍕
         </span>
       </Logo>
