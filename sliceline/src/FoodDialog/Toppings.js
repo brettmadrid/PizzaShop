@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const ToppingGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat((3, 1fr));
+  /* grid-template-columns: repeat((3, 1fr)); */
+  grid-template-columns: auto auto auto;
 `
 
 const ToppingCheckbox = styled.input`
@@ -15,18 +16,21 @@ const CheckboxLabel = styled.label`
   cursor: pointer;
 `
 
-export function Toppings() {
+export function Toppings({ toppings, checkTopping }) {
   return (
     <ToppingGrid>
-      <CheckboxLabel>
-        <ToppingCheckbox
-          type='checkbox'
-          onClick={() => {
-            console.log('hello')
-          }}
-        />
-        Topping
-      </CheckboxLabel>
+      {toppings.map((topping, i) => (
+        <CheckboxLabel>
+          <ToppingCheckbox
+            type='checkbox'
+            checked={topping.checked}
+            onClick={() => {
+              checkTopping(i)
+            }}
+          />
+          {topping.name}
+        </CheckboxLabel>
+      ))}
     </ToppingGrid>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Title } from '../Styles/title'
+// import { Title } from '../Styles/title'
 import { pizzaRed } from '../Styles/colors'
 
 const QuantityInputStyled = styled.input`
